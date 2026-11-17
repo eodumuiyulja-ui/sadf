@@ -1,0 +1,57 @@
+/* ORBIS STAGE 1 — foundation, gate atmosphere, navigation and responsive polish */
+:root{--cyan-soft:rgba(130,213,213,.14);--focus:0 0 0 3px rgba(130,213,213,.24)}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background-image:radial-gradient(ellipse at 12% 8%,rgba(34,92,112,.12),transparent 32%),radial-gradient(ellipse at 88% 80%,rgba(22,74,93,.10),transparent 34%)}
+button,a{-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible{outline:none;box-shadow:var(--focus);border-color:var(--cyan)!important}
+.intro{isolation:isolate}
+.intro:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(120deg,transparent 0 48%,rgba(105,207,213,.035) 49%,transparent 50%),radial-gradient(ellipse at 75% 50%,transparent 0 23%,rgba(105,207,213,.035) 23.2%,transparent 23.6%);background-size:100% 100%,100% 100%}
+.intro:after{z-index:1;opacity:.7}
+.intro-top,.intro-bottom,.intro-copy,.gate-scene{z-index:2}
+.gate-scene{filter:drop-shadow(0 0 28px rgba(92,211,216,.08));animation:gateFloat 8s ease-in-out infinite}
+.gate-ring{background:conic-gradient(from 0deg,transparent,rgba(135,235,231,.12),transparent 24%,rgba(135,235,231,.08),transparent 55%)}
+.ring-middle{border-style:dotted}
+.ring-inner:before{content:"";position:absolute;inset:12%;border:1px solid rgba(142,224,225,.13);border-radius:50%;transform:rotate(35deg) scaleX(.72)}
+.gate-core{position:relative;z-index:2;backdrop-filter:blur(2px)}
+.gate-core:after{content:"";position:absolute;inset:-13px;border:1px solid rgba(146,241,239,.12);border-radius:50%;animation:coreOrbit 12s linear infinite}
+.gate-coordinate:before{content:"◈";color:var(--cyan);margin-right:7px}
+.intro-copy{animation:copyReveal .9s .15s both}
+.eyebrow{ text-transform:uppercase }
+.primary-button,.skip-button,.line-button,.text-button,.nav-item,.replay-button{position:relative;overflow:hidden}
+.primary-button:before,.line-button:before{content:"";position:absolute;inset:0;transform:translateX(-120%);background:linear-gradient(100deg,transparent,rgba(192,255,250,.13),transparent);transition:transform .65s}
+.primary-button:hover:before,.line-button:hover:before{transform:translateX(120%)}
+.primary-button:disabled,.skip-button:disabled{opacity:.45;cursor:wait}
+.site{animation:siteReveal .55s ease both}
+.topbar{backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.brand-mark{transition:transform .45s,box-shadow .3s}
+.brand:hover .brand-mark{transform:rotate(225deg);box-shadow:0 0 22px rgba(130,213,213,.2)}
+.nav-item{transition:background .22s,border-color .22s,color .22s,transform .22s}
+.nav-item:hover{transform:translateX(3px)}
+.nav-item.active{box-shadow:inset 2px 0 var(--cyan)}
+.page.active{animation:pageIn .38s cubic-bezier(.2,.7,.2,1) both}
+.stats article,.panel,.placeholder,.hero{transition:border-color .25s,background-color .25s,transform .25s,box-shadow .25s}
+.stats article:hover{border-color:rgba(130,213,213,.34);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
+.panel:hover{border-color:rgba(130,213,213,.27)}
+.hero-orbit{animation:orbitBreath 7s ease-in-out infinite}
+.hero-orbit:before{animation:rotate 75s linear infinite}
+.hero-orbit:after{animation:rotateBack 55s linear infinite}
+.live i{animation:statusPulse 2.2s ease-in-out infinite}
+.breadcrumb{user-select:none}
+.registration{backdrop-filter:blur(10px)}
+.registration-panel{animation:panelRise .45s ease both}
+.log-line{letter-spacing:.04em}
+.site footer{font-size:8px}
+/* ambient particles are decorative and never intercept interaction */
+.ambient-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.ambient-particles i{position:absolute;width:2px;height:2px;border-radius:50%;background:#a9f4ed;box-shadow:0 0 9px rgba(143,238,230,.8);opacity:0;animation:particleDrift var(--duration,12s) linear infinite;animation-delay:var(--delay,0s)}
+@keyframes gateFloat{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@keyframes coreOrbit{to{transform:rotate(360deg)}}
+@keyframes copyReveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes siteReveal{from{opacity:0}to{opacity:1}}
+@keyframes pageIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+@keyframes orbitBreath{0%,100%{filter:brightness(.85)}50%{filter:brightness(1.2)}}
+@keyframes statusPulse{0%,100%{opacity:1;box-shadow:0 0 8px #8bd3b8}50%{opacity:.45;box-shadow:0 0 2px #8bd3b8}}
+@keyframes panelRise{from{opacity:0;transform:translateY(12px) scale(.99)}to{opacity:1;transform:none}}
+@keyframes particleDrift{0%{opacity:0;transform:translate3d(0,18px,0)}15%{opacity:.65}80%{opacity:.45}100%{opacity:0;transform:translate3d(28px,-95px,0)}}
+@media(max-width:700px){.gate-scene{animation-duration:10s}.nav-item:hover{transform:none}.stats article:hover{transform:none}.intro-copy{animation:none}.gate-core:after{animation-duration:22s}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.ambient-particles{display:none}}

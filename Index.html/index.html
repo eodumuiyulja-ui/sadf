@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071522">
+<title>ORBIS | Interdimensional Organization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;600&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/stage1.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/stage3.css"><link rel="stylesheet" href="css/stage4.css">
+</head>
+<body>
+<div class="noise"></div>
+<!-- INTRO: gate -> hub connection -> traveler registration -->
+<section class="intro" id="intro" aria-label="ORBIS 진입 화면">
+  <div class="intro-top"><span class="mini-brand">O / ORBIS</span><span id="introSystem">INTERDIMENSIONAL GATE SYSTEM</span><span class="system-state"><i></i> STANDBY</span></div>
+  <div class="gate-scene">
+    <div class="gate-coordinate">GATE ID: CH-0001<br>DESTINATION: CENTRAL HUB</div>
+    <div class="gate-ring ring-outer"></div><div class="gate-ring ring-middle"></div><div class="gate-ring ring-inner"></div>
+    <div class="gate-core"><span>O</span><small>ORBIS</small></div>
+    <div class="gate-floor"></div>
+    <div class="gate-scan"></div>
+  </div>
+  <div class="intro-copy">
+    <p class="eyebrow">A CONNECTION BEYOND DIMENSIONS</p>
+    <h1>THE GATE<br><em>IS WAITING.</em></h1>
+    <p class="intro-sub">모든 차원의 경계 너머, 오르비스로 향하는 관문.</p>
+    <button class="primary-button" id="enterButton"><span>ENTER ORBIS</span><b>↗</b></button>
+    <button class="skip-button" id="skipButton">SKIP INTRO <span>→</span></button>
+  </div>
+  <div class="intro-bottom"><span>ORBIS CENTRAL HUB / ACCESS POINT 01</span><span>UNREGISTERED VISITOR DETECTED</span></div>
+</section>
+
+<!-- Registration sequence -->
+<section class="registration hidden" id="registration">
+  <div class="registration-panel">
+    <div class="registration-symbol">O</div>
+    <p class="eyebrow">CENTRAL HUB // ARRIVAL CONFIRMED</p>
+    <h2 id="registrationTitle">방문자 확인</h2>
+    <p id="registrationText">미등록 방문자의 접속이 확인되었습니다.</p>
+    <div class="registration-log" id="registrationLog"></div>
+    <button class="primary-button hidden" id="completeButton"><span>ACCESS CENTRAL HUB</span><b>↗</b></button>
+  </div>
+</section>
+
+<div class="site hidden" id="site">
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-mark">O</span><span><strong>ORBIS</strong><small>INTERDIMENSIONAL ORGANIZATION</small></span></a>
+  <div class="top-status"><i></i> CENTRAL HUB / SYSTEM ONLINE</div>
+  <button class="mobile-menu" id="mobileMenu" aria-label="메뉴 열기">☰</button>
+</header>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="side-label">MAIN DIRECTORY</div>
+  <nav>
+    <button class="nav-item active" data-page="home"><small>01</small> HOME <b>⌂</b></button>
+    <button class="nav-item" data-page="about"><small>02</small> ABOUT <b>◈</b></button>
+    <button class="nav-item" data-page="dimensions"><small>03</small> DIMENSIONS <b>◎</b></button>
+    <button class="nav-item" data-page="travelers"><small>04</small> TRAVELERS <b>♧</b></button>
+    <button class="nav-item" data-page="gates"><small>05</small> GATE NETWORK <b>⌘</b></button>
+    <button class="nav-item" data-page="bulletin"><small>06</small> BULLETIN <b>▤</b></button>
+    <button class="nav-item" data-page="archive"><small>07</small> ARCHIVE <b>▣</b></button>
+    <button class="nav-item" data-page="requests"><small>08</small> REQUEST BOARD <b>⌁</b></button>
+    <button class="nav-item" data-page="journal"><small>09</small> TRAVEL JOURNAL <b>▤</b></button>
+    <button class="nav-item" data-page="monitor"><small>10</small> DIMENSION MONITOR <b>◉</b></button>
+    <button class="nav-item" data-page="profile"><small>11</small> MY PROFILE <b>✧</b></button>
+  </nav>
+  <div class="side-bottom"><span>TRAVELER ACCESS</span><div class="access-card"><b>✧</b><div><strong>TRAVELER / CLASS 05</strong><small>USER · REGISTERED</small></div></div><small class="version">ORBIS NETWORK · v1.1.0</small><button class="replay-button" id="replayIntro">↺ REPLAY ARRIVAL SEQUENCE</button></div>
+</aside>
+<main class="main">
+  <div class="breadcrumb">ORBIS <b>/</b> <span id="crumb">HOME</span></div>
+  <section class="page active" id="page-home">
+    <div class="hero">
+      <div class="hero-grid"></div><div class="hero-copy"><p class="eyebrow">INTERDIMENSIONAL ORGANIZATION</p><h1>BEYOND<br><em>EVERY</em> DIMENSION.</h1><p class="hero-ko">모든 차원의 경계 너머로.</p><p class="hero-desc">서로 다른 세계를 연결하고, 미지의 차원을 탐사하며,<br>차원 간 균형을 유지하는 초차원 중립 기관.</p><button class="line-button" data-link="about">DISCOVER ORBIS ↗</button></div>
+      <div class="hero-orbit"><div class="orbit-core">O<small>HUB 01</small></div></div><span class="hero-caption">FIG. 01 — CENTRAL HUB OVERVIEW</span>
+    </div>
+    <div class="section-head"><div><p class="eyebrow">CURRENT STATUS</p><h2>중앙 허브 현황</h2></div><span class="live"><i></i> SYSTEM ONLINE</span></div>
+    <div class="stats">
+      <article><small>REGISTERED DIMENSIONS</small><strong>07</strong><span>등록된 차원</span></article>
+      <article><small>REGISTERED TRAVELERS</small><strong>09</strong><span>등록된 여행자</span></article>
+      <article><small>GATE NETWORK</small><strong>05 <i>/ 07</i></strong><span>화면 연출용 상태값</span></article>
+      <article class="warning"><small>RESTRICTED ZONES</small><strong>02</strong><span>봉인 및 탐지 불가 차원</span></article>
+    </div>
+    <div class="bottom-grid">
+      <article class="panel"><div class="panel-head"><div><p class="eyebrow">LATEST TRANSMISSION</p><h3>허브 소식</h3></div><small>BULLETIN / 001</small></div>
+        <div class="news"><label>NOTICE</label><div><b>중앙 허브 시스템 안내</b><p>오르비스 네트워크에 오신 것을 환영합니다.</p></div></div>
+        <div class="news"><label class="gold">ALERT</label><div><b>차원 관문 상태 확인</b><p>일부 차원의 접근 상태는 별도 확인이 필요합니다.</p></div></div>
+        <button class="text-button" data-link="bulletin">전체 소식 보기 ↗</button>
+      </article>
+      <article class="panel principle"><p class="eyebrow">ORGANIZATION PRINCIPLE</p><span>“</span><blockquote>모든 세계는 서로 다르지만,<br>어느 세계도 홀로 존재하지 않는다.</blockquote><small>— ORBIS FOUNDING PRINCIPLE</small></article>
+    </div>
+  </section>
+  <section class="page" id="page-about"><header class="page-title"><p class="eyebrow">ORGANIZATION PROFILE / 02</p><h1>ABOUT <em>ORBIS</em></h1><p>특정 세계나 세력에 속하지 않는 초차원 중립 기관.</p></header><div class="placeholder"><b>◈</b><h2>기관 소개</h2><p>설립 목적, 중앙 허브, 여행자 등급 체계와 조직 구성을 이곳에 추가합니다.</p></div></section>
+  <section class="page" id="page-dimensions"><header class="page-title"><p class="eyebrow">DIMENSIONAL INDEX / 03</p><h1>THE <em>DIMENSIONS</em></h1><p>오르비스에 등록된 일곱 개 차원 데이터베이스.</p></header><div class="placeholder"><b>◎</b><h2>차원 도감</h2><p>아스트라 폴부터 보이드 머로우까지 차원 카드와 고유 용어 사전을 추가합니다.</p></div></section>
+  <section class="page" id="page-travelers"><header class="page-title"><p class="eyebrow">PERSONNEL DATABASE / 04</p><h1>THE <em>TRAVELERS</em></h1><p>오르비스에 등록된 여행자 및 관련 인물 기록.</p></header><div class="placeholder"><b>♧</b><h2>여행자 기록</h2><p>캐릭터 이미지, 프로필, 능력, 과거사와 인물별 특수 열람 효과를 추가합니다.</p></div></section>
+  <section class="page" id="page-gates"><header class="page-title"><p class="eyebrow">CONNECTION MONITOR / 05</p><h1>GATE <em>NETWORK</em></h1><p>각 차원과 중앙 허브를 연결하는 관문 네트워크.</p></header><div class="placeholder"><b>⌘</b><h2>관문 네트워크</h2><p>아스트라 폴은 SEALED, 보이드 머로우는 UNDETECTED로 표시합니다.</p></div></section>
+  <section class="page" id="page-bulletin"><header class="page-title"><p class="eyebrow">CENTRAL HUB TRANSMISSION / 06</p><h1>HUB <em>BULLETIN</em></h1><p>중앙 허브와 각 차원에서 전달된 공지 및 사건 소식.</p></header><div class="placeholder"><b>▤</b><h2>허브 소식</h2><p>기관 공지, 차원 사건, 오염 경보와 여행자 관련 소식을 게시합니다.</p></div></section>
+  <section class="page" id="page-archive"><header class="page-title"><p class="eyebrow">RESTRICTED DATABASE / 07</p><h1>THE <em>ARCHIVE</em></h1><p>일반 기록부터 접근 제한 및 미확인 기록까지 보관하는 문서 저장소.</p></header><div class="placeholder"><b>▣</b><h2>기록 보관소</h2><p>일부 문서는 열람 권한이 필요하거나 데이터가 손상되어 있을 수 있습니다.</p><small class="red">UNAUTHORIZED ACCESS IS PROHIBITED.</small></div></section>
+  
+  <section class="page" id="page-requests"><header class="page-title"><p class="eyebrow">MISSION DISPATCH / 08</p><h1>REQUEST <em>BOARD</em></h1><p>중앙 허브에 등록된 의뢰. 수락 및 완료 상태는 이 브라우저에 저장됩니다.</p></header><div id="requestBoard"></div></section>
+  <section class="page" id="page-journal"><header class="page-title"><p class="eyebrow">PERSONAL EXPLORATION LOG / 09</p><h1>TRAVEL <em>JOURNAL</em></h1><p>USER의 방문 기록과 의뢰 수행 이력을 보관합니다.</p></header><div id="travelJournal"></div></section>
+  <section class="page" id="page-monitor"><header class="page-title"><p class="eyebrow">INTERDIMENSIONAL TELEMETRY / 10</p><h1>DIMENSION <em>MONITOR</em></h1><p>등록 차원의 관측 상태 및 관문 연결 현황. 수치는 홈페이지 연출용 데이터입니다.</p></header><div id="dimensionMonitor"></div></section>
+  <section class="page" id="page-profile"><header class="page-title"><p class="eyebrow">PERSONAL IDENTIFICATION / 11</p><h1>TRAVELER <em>PROFILE</em></h1><p>오르비스 네트워크에 등록된 사용자 본인의 여행자 정보.</p></header><div id="userProfile"></div></section>
+  <footer>© ORBIS — INTERDIMENSIONAL ORGANIZATION <span>ALL DIMENSIONS. ONE NETWORK.</span></footer>
+</main>
+</div>
+</div>
+<script src="js/stage1.js"></script><script src="js/intro.js"></script><script src="js/app.js"></script><script src="js/stage3.js"></script><script src="js/stage4.js"></script>
+</body></html>
